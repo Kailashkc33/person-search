@@ -25,7 +25,7 @@ export default function AboutPage() {
               cutting-edge libraries to create a responsive and accessible user experience.
             </p>
             <p>
-              Key features include asynchronous search functionality, server-side filtering, 
+              Key features include asynchronous search functionality, server-sides filtering, 
               and a dark mode toggle for user comfort.
             </p>
           </CardContent>

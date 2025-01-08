@@ -5,7 +5,6 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
 import { Phone, Mail } from 'lucide-react'
 import { getUserById } from '../actions/actions'
-import DeleteButton from './delete-button'
 import { Button } from "@/components/ui/button"
 import { deleteUser } from "@/app/actions/actions"
 import { UserDialog } from "./user-dialog"

@@ -4,6 +4,7 @@ import { updateUser } from '@/app/actions/actions'
 import { userFormSchema, User, UserFormData } from '@/app/actions/schemas'
 import { UserForm } from './user-form'
 import MutableDialog, { ActionState } from '@/components/mutable-dialog'
+import { Button } from '@/components/ui/button'
 
 interface UserEditDialogProps {
   user: User
@@ -28,11 +29,10 @@ export function UserEditDialog({ user }: UserEditDialogProps) {
 
   return (
     <MutableDialog<UserFormData>
-      formSchema={userFormSchema}
       FormComponent={UserForm}
       action={handleEditUser}
-      triggerButtonLabel="Edit"
-      editDialogTitle={`Edit ${user.name}`}
+      triggerButton={<Button>Edit</Button>}
+      dialogTitle={`Edit ${user.name}`}
       dialogDescription={`Update the details of ${user.name} below.`}
       submitButtonLabel="Save Changes"
       defaultValues={{

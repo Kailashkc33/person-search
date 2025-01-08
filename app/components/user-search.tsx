@@ -4,6 +4,8 @@ import AsyncSelect from 'react-select/async'
 import { searchUsers } from '@/app/actions/actions'
 import UserCard from './user-card'
 import { User } from '@/app/actions/schemas'
+import { UserDialog } from "./user-dialog"
+import { Button } from "@/components/ui/button"
 
 interface Option {
   value: string
@@ -29,6 +31,15 @@ export default function UserSearch() {
 
   return (
     <div className="space-y-6">
+      <div className="flex flex-col gap-4 mb-6">
+        <h2 className="text-2xl font-bold tracking-tight">Users</h2>
+        <div className="w-fit">
+          <UserDialog 
+            mode="create"
+            trigger={<Button>Add User</Button>}
+          />
+        </div>
+      </div>
       <AsyncSelect
         cacheOptions={false}
         loadOptions={loadOptions}

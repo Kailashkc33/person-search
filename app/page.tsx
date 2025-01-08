@@ -2,6 +2,7 @@
 import { Suspense } from 'react'
 import UserSearch from './components/user-search'
 import { UserDialog } from './components/user-dialog'
+import { Button } from "@/components/ui/button"
 
 export default function Home() {
   function TechnicalOverview() {
@@ -17,11 +18,12 @@ export default function Home() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8">User Search</h1>
+      <div className="flex items-center gap-4 mb-8">
+        <h1 className="text-3xl font-bold">User Search</h1>
+      </div>
       <Suspense fallback={<div>Loading...</div>}>
         <UserSearch />
       </Suspense> 
-      <UserDialog />
       <TechnicalOverview />
     </div>
   )

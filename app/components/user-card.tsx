@@ -6,6 +6,9 @@ import { Badge } from '@/components/ui/badge'
 import { Phone, Mail } from 'lucide-react'
 import { getUserById } from '../actions/actions'
 import DeleteButton from './delete-button'
+import { Button } from "@/components/ui/button"
+import { deleteUser } from "@/app/actions/actions"
+import { UserDialog } from "./user-dialog"
 
 interface UserCardProps {
   userId: string
@@ -46,7 +49,22 @@ export default async function UserCard({ userId }: UserCardProps) {
         )}
       </CardContent>
       <CardFooter className="flex justify-between items-center">
-        <DeleteButton userId={user.id} />
+        <UserDialog 
+          mode="edit" 
+          user={user} 
+          trigger={
+            <Button variant="outline" size="sm">
+              Edit
+            </Button>
+          } 
+        />
+        <Button 
+          variant="destructive" 
+          size="sm" 
+          onClick={() => deleteUser(user.id)}
+        >
+          Delete
+        </Button>
       </CardFooter>
     </Card>
   )

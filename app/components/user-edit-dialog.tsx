@@ -1,7 +1,7 @@
 'use client'
 
 import { updateUser } from '@/app/actions/actions'
-import { userFormSchema, User, UserFormData } from '@/app/actions/schemas'
+import { User, UserFormData } from '@/app/actions/schemas'
 import { UserForm } from './user-form'
 import MutableDialog, { ActionState } from '@/components/mutable-dialog'
 import { Button } from '@/components/ui/button'

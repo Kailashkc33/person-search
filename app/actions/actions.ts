@@ -1,8 +1,7 @@
 'use server'
 
 import { revalidatePath } from 'next/cache'
-import { User, userSchema } from './schemas'
-import crypto from 'crypto';
+import { User } from './schemas'
 import { prisma } from '@/lib/prisma'
 
 export async function searchUsers(query: string): Promise<User[]> {
